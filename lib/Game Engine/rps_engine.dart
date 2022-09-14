@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:rock_paper_scissors/Reusables/Widgets/rsl-widget.dart';
 
-import '../constants.dart';
-import '../rock-paper-scissors.dart';
+import '../Reusables/constants.dart';
 
 class RPSEngine extends ChangeNotifier {
   int _userScore = 0;
@@ -270,7 +270,7 @@ class RPSEngine extends ChangeNotifier {
   void playRPS(String userChoice) {
     _userChoice = userChoice;
     _computerChoice = _getComputerChoiceRPS();
-    _result = getRPSResultString();
+    _result = getRPSResult();
     notifyListeners();
   }
 

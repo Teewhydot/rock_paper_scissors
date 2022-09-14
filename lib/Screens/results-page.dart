@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import 'Game Engine/rps_engine.dart';
-import 'constants.dart';
+import '../Game Engine/rps_engine.dart';
+import '../Reusables/constants.dart';
 
 class ResultsPage extends StatelessWidget {
   final Widget userChoice;
   final Widget computerChoice;
   final String result;
+  final Widget svgImage;
 
-  ResultsPage(this.userChoice, this.computerChoice, this.result);
+  ResultsPage(this.userChoice, this.computerChoice, this.result, this.svgImage);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class ResultsPage extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                rockPaperScissors,
+                                svgImage,
                                 Row(
                                   children: [
                                     Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rock_paper_scissors/constants.dart';
-import 'package:rock_paper_scissors/rock-paper-scissors-lizard-spock.dart';
-import 'package:rock_paper_scissors/rock-paper-scissors.dart';
+import 'package:rock_paper_scissors/Reusables/constants.dart';
+import 'package:rock_paper_scissors/Screens/rock-paper-scissors-lizard-spock.dart';
+import 'package:rock_paper_scissors/Screens/rock-paper-scissors.dart';
 
 class GameHome extends StatelessWidget {
   const GameHome({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
       children: [
         const Center(
             child: Text(
-          "Choose Your Daemon",
+          "Choose Your Breakfast",
           style: TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.w900),
         )),

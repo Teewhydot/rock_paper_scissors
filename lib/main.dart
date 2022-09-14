@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:rock_paper_scissors/Game%20Engine/rps_engine.dart';
-import 'package:rock_paper_scissors/home_screen.dart';
+import 'package:rock_paper_scissors/Screens/home_screen.dart';
 
 void main() {
   runApp(MultiProvider(

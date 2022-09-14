@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:rock_paper_scissors/constants.dart';
+import 'package:rock_paper_scissors/Game%20Engine/rps_engine.dart';
+import 'package:rock_paper_scissors/Reusables/constants.dart';
+import 'package:rock_paper_scissors/Screens/results-page.dart';
 
-import 'Game Engine/rps_engine.dart';
-import 'results-page.dart';
-import 'rock-paper-scissors.dart';
+import '../Reusables/Widgets/rsl-widget.dart';
+import 'rules-screen.dart';
 
-class RockPaperScissorsLizardSpock extends StatelessWidget {
-  const RockPaperScissorsLizardSpock({Key? key}) : super(key: key);
+class RockPaperScissors extends StatelessWidget {
+  const RockPaperScissors({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final providerListen = Provider.of<RPSEngine>(context);
     final provider = Provider.of<RPSEngine>(context, listen: false);
 
     void optionPressed(String option) {
-      provider.playRPSLS(option);
+      provider.playRPS(option);
       Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => ResultsPage(
-                  provider.getUserChoiceWidgetRPSLS(),
-                  provider.getComputerChoiceWidgetRPSLS(),
-                  provider.getRPSLSResultString())));
+                  provider.getUserChoiceWidgetRPS(),
+                  provider.getComputerChoiceWidgetRPS(),
+                  provider.getRPSResultString(),
+                  rockPaperScissors)));
     }
 
-    final providerListen = Provider.of<RPSEngine>(context);
     return Scaffold(
       backgroundColor: Color(0xff1a2447),
       body: Column(
@@ -43,24 +45,22 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Color(0xff1e3555),
                             border: Border.all(color: Color(0xff5d6d88))),
-                        height: 90,
+                        height: 70,
                         width: MediaQuery.of(context).size.width,
                         child: Padding(
                           padding: EdgeInsets.all(7.0.r),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              rockPaperScissorsLizardSpock,
+                              rockPaperScissors,
                               Row(
                                 children: [
                                   Container(
-                                    width: 70,
+                                    width: 60,
                                     color: Color(0xfff6f6f6),
                                     child: Padding(
                                       padding: EdgeInsets.all(5.0.r),
                                       child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             'You',
@@ -70,7 +70,7 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
                                           Text(
                                             providerListen.userScore.toString(),
                                             style: TextStyle(
-                                                fontSize: 25.sp,
+                                                fontSize: 17.sp,
                                                 fontWeight: FontWeight.w900),
                                           ),
                                         ],
@@ -79,13 +79,11 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
                                   ),
                                   addHorizontalSpacing(10),
                                   Container(
-                                    width: 70,
+                                    width: 60,
                                     color: Color(0xfff6f6f6),
                                     child: Padding(
                                       padding: EdgeInsets.all(5.0.r),
                                       child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             'House',
@@ -96,7 +94,7 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
                                             providerListen.computerScore
                                                 .toString(),
                                             style: TextStyle(
-                                                fontSize: 25.sp,
+                                                fontSize: 17.sp,
                                                 fontWeight: FontWeight.w900),
                                           ),
                                         ],
@@ -121,30 +119,19 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       RPSOptionWidget(
-                          scissors, 'Scissors', scissorsColor, optionPressed),
-                    ],
-                  ),
-                  addVerticalSpacing(10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      RPSOptionWidget(
-                          spock, 'Spock', spockColor, optionPressed),
-                      addHorizontalSpacing(120),
-                      RPSOptionWidget(
                           paper, 'Paper', paperColor, optionPressed),
+                      addHorizontalSpacing(40),
+                      RPSOptionWidget(
+                          scissors, 'Scissors', scissorsColor, optionPressed),
                     ],
                   ),
                   addVerticalSpacing(30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      RPSOptionWidget(
-                          lizard, "Lizard", lizardColor, optionPressed),
-                      addHorizontalSpacing(30),
                       RPSOptionWidget(rock, 'Rock', rockColor, optionPressed),
                     ],
-                  ),
+                  )
                 ],
               ),
             ],
@@ -152,23 +139,31 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 50),
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color(0xff1e3555),
-                      border: Border.all(color: Color(0xff5d6d88))),
-                  height: 40,
-                  width: 80,
-                  child: Center(
-                      child: Text(
-                    'Rules',
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Color(0xffe4eaf1),
-                        fontWeight: FontWeight.w900),
-                  )),
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) =>
+                          showRulesScreen('assets/images/image-rules.png'));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 50),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: Color(0xff1e3555),
+                        border: Border.all(color: Color(0xff5d6d88))),
+                    height: 40,
+                    width: 80,
+                    child: Center(
+                        child: Text(
+                      'Rules',
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xffe4eaf1),
+                          fontWeight: FontWeight.w900),
+                    )),
+                  ),
                 ),
               ),
               addHorizontalSpacing(20),

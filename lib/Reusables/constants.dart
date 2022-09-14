@@ -52,3 +52,11 @@ final Widget lizard = SvgPicture.asset(
 final Widget spock = SvgPicture.asset(
   'assets/images/icon-spock.svg',
 );
+
+final Widget rulesRPS = SvgPicture.asset(
+  'assets/images/image-rules.svg',
+);
+
+final Widget rulesRPSLS = SvgPicture.asset(
+  'assets/images/image-rules-bonus.svg',
+);
