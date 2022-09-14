@@ -7,7 +7,9 @@ class RPSOptionWidget extends StatelessWidget {
   final color;
   final Function onTap;
 
-  RPSOptionWidget(this.option, this.text, this.color, this.onTap);
+  const RPSOptionWidget(this.option, this.text, this.color, this.onTap,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -29,7 +29,7 @@ class RockPaperScissors extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xff1a2447),
+      backgroundColor: const Color(0xff1a2447),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -37,14 +37,14 @@ class RockPaperScissors extends StatelessWidget {
             children: [
               addVerticalSpacing(70),
               Container(
-                margin: EdgeInsets.all(16),
+                margin: const EdgeInsets.all(16),
                 child: Row(
                   children: [
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Color(0xff1e3555),
-                            border: Border.all(color: Color(0xff5d6d88))),
+                            color: const Color(0xff1e3555),
+                            border: Border.all(color: const Color(0xff5d6d88))),
                         height: 70,
                         width: MediaQuery.of(context).size.width,
                         child: Padding(
@@ -57,12 +57,12 @@ class RockPaperScissors extends StatelessWidget {
                                 children: [
                                   Container(
                                     width: 60,
-                                    color: Color(0xfff6f6f6),
+                                    color: const Color(0xfff6f6f6),
                                     child: Padding(
                                       padding: EdgeInsets.all(5.0.r),
                                       child: Column(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'You',
                                             style: TextStyle(
                                                 color: Color(0xff8991b9)),
@@ -80,14 +80,14 @@ class RockPaperScissors extends StatelessWidget {
                                   addHorizontalSpacing(10),
                                   Container(
                                     width: 60,
-                                    color: Color(0xfff6f6f6),
+                                    color: const Color(0xfff6f6f6),
                                     child: Padding(
                                       padding: EdgeInsets.all(5.0.r),
                                       child: Column(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'House',
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Color(0xff8991b9)),
                                           ),
                                           Text(
@@ -150,13 +150,14 @@ class RockPaperScissors extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 50),
                   child: Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff1e3555),
-                        border: Border.all(color: Color(0xff5d6d88))),
+                        borderRadius:
+                            const BorderRadius.all(const Radius.circular(10)),
+                        color: const Color(0xff1e3555),
+                        border: Border.all(color: const Color(0xff5d6d88))),
                     height: 40,
                     width: 80,
-                    child: Center(
-                        child: Text(
+                    child: const Center(
+                        child: const Text(
                       'Rules',
                       style: TextStyle(
                           fontSize: 15,
@@ -175,17 +176,18 @@ class RockPaperScissors extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 50),
                   child: Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff1e3555),
-                        border: Border.all(color: Color(0xff5d6d88))),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        color: const Color(0xff1e3555),
+                        border: Border.all(color: const Color(0xff5d6d88))),
                     height: 40,
                     width: 150,
-                    child: Center(
-                        child: Text(
+                    child: const Center(
+                        child: const Text(
                       'Quit Game Mode',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 15,
-                          color: Color(0xffe4eaf1),
+                          color: const Color(0xffe4eaf1),
                           fontWeight: FontWeight.w900),
                     )),
                   ),

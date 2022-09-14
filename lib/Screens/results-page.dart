@@ -11,14 +11,17 @@ class ResultsPage extends StatelessWidget {
   final String result;
   final Widget svgImage;
 
-  ResultsPage(this.userChoice, this.computerChoice, this.result, this.svgImage);
+  const ResultsPage(
+      this.userChoice, this.computerChoice, this.result, this.svgImage,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<RPSEngine>(context, listen: false);
     final providerListen = Provider.of<RPSEngine>(context);
     return Scaffold(
-      backgroundColor: Color(0xff1a2447),
+      backgroundColor: const Color(0xff1a2447),
       body: Center(
         child: Column(
           children: [
@@ -26,14 +29,15 @@ class ResultsPage extends StatelessWidget {
               children: [
                 addVerticalSpacing(70),
                 Container(
-                  margin: EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
                   child: Row(
                     children: [
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Color(0xff1e3555),
-                              border: Border.all(color: Color(0xff5d6d88))),
+                              color: const Color(0xff1e3555),
+                              border:
+                                  Border.all(color: const Color(0xff5d6d88))),
                           height: 70,
                           width: MediaQuery.of(context).size.width,
                           child: Padding(
@@ -46,12 +50,12 @@ class ResultsPage extends StatelessWidget {
                                   children: [
                                     Container(
                                       width: 60,
-                                      color: Color(0xfff6f6f6),
+                                      color: const Color(0xfff6f6f6),
                                       child: Padding(
                                         padding: EdgeInsets.all(5.0.r),
                                         child: Column(
                                           children: [
-                                            Text(
+                                            const Text(
                                               'You',
                                               style: TextStyle(
                                                   color: Color(0xff8991b9)),
@@ -70,14 +74,14 @@ class ResultsPage extends StatelessWidget {
                                     addHorizontalSpacing(10),
                                     Container(
                                       width: 60,
-                                      color: Color(0xfff6f6f6),
+                                      color: const Color(0xfff6f6f6),
                                       child: Padding(
                                         padding: EdgeInsets.all(5.0.r),
                                         child: Column(
                                           children: [
-                                            Text(
+                                            const Text(
                                               'House',
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Color(0xff8991b9)),
                                             ),
                                             Text(
@@ -114,7 +118,8 @@ class ResultsPage extends StatelessWidget {
                             addVerticalSpacing(20),
                             Text('You Picked',
                                 style: TextStyle(
-                                    color: Color(0xff8991b9), fontSize: 15.sp)),
+                                    color: const Color(0xff8991b9),
+                                    fontSize: 15.sp)),
                           ],
                         ),
                         addHorizontalSpacing(40),
@@ -124,7 +129,8 @@ class ResultsPage extends StatelessWidget {
                             addVerticalSpacing(20),
                             Text('House Picked',
                                 style: TextStyle(
-                                    color: Color(0xff8991b9), fontSize: 15.sp)),
+                                    color: const Color(0xff8991b9),
+                                    fontSize: 15.sp)),
                           ],
                         ),
                       ],
@@ -138,12 +144,12 @@ class ResultsPage extends StatelessWidget {
             Text(
               result,
               style: TextStyle(
-                  color: Color(0xff8991b9),
+                  color: const Color(0xff8991b9),
                   fontSize: 30.sp,
                   fontWeight: FontWeight.w900),
             ),
             addVerticalSpacing(50),
-            Container(
+            SizedBox(
               width: 200,
               height: 50,
               child: ElevatedButton(
@@ -155,7 +161,7 @@ class ResultsPage extends StatelessWidget {
                   style: TextStyle(fontSize: 20.sp),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xff1e3555),
+                  primary: const Color(0xff1e3555),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -163,7 +169,7 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
             addVerticalSpacing(20),
-            Container(
+            SizedBox(
               width: 200,
               height: 50,
               child: ElevatedButton(
@@ -176,7 +182,7 @@ class ResultsPage extends StatelessWidget {
                   style: TextStyle(fontSize: 20.sp),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color(0xff1e3555),
+                  primary: const Color(0xff1e3555),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),

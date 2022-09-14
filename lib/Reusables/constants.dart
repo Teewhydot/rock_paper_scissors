@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-final Color paperColor = const Color(0xff516cf4);
+const Color paperColor = const Color(0xff516cf4);
 
-final Color rockColor = const Color(0xffdf405d);
+const Color rockColor = const Color(0xffdf405d);
 
-final Color scissorsColor = const Color(0xffeca319);
+const Color scissorsColor = const Color(0xffeca319);
 
-final Color lizardColor = const Color(0xff8c5ce4);
+const Color lizardColor = const Color(0xff8c5ce4);
 
-final Color spockColor = const Color(0xff40b9cc);
+const Color spockColor = const Color(0xff40b9cc);
 
 Widget addVerticalSpacing(double height) {
   return SizedBox(
@@ -24,7 +24,7 @@ Widget addHorizontalSpacing(double width) {
   );
 }
 
-final String rps = 'assets/images/logo.svg';
+const String rps = 'assets/images/logo.svg';
 final Widget rockPaperScissors = SvgPicture.asset(
   rps,
 );

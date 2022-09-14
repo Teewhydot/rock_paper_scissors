@@ -38,10 +38,12 @@ class _HomeState extends State<Home> {
         addVerticalSpacing(120),
         GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => RockPaperScissors()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const RockPaperScissors()));
           },
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: rockPaperScissors,
             width: 100,
@@ -53,9 +55,10 @@ class _HomeState extends State<Home> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => RockPaperScissorsLizardSpock()));
+                    builder: (context) =>
+                        const RockPaperScissorsLizardSpock()));
           },
-          child: Container(
+          child: SizedBox(
             height: 80,
             child: rockPaperScissorsLizardSpock,
             width: 100,
