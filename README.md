@@ -1,16 +1,31 @@
-# rock_paper_scissors
+## Table of contents
 
-A new Flutter project.
+- [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Links](#links)
+    - [Built with](#built-with)
+- [Author](#author)
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+### The challenge
 
-A few resources to get you started if this is your first Flutter project:
+Users should be able to:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Choose game mode (Rock paper Scissors or Rock paper Scissors Lizard Spock)
+- See the game score
+- Reset the game score and start a new game
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Links
+
+- Solution URL: [Github repository URL](https://github.com/Teewhydot/rock_paper_scissors.git)
+
+### Built with
+
+- [Flutter](https://flutter.dev)
+- Provider State Management
+
+## Author
+
+- Website - [Abubakar Issa](https://www.teeofgui.tech)
+- Twitter - [@tee_of_gui](www.twitter.com/tee_of_gui)
