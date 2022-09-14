@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rock_paper_scissors/constants.dart';
+import 'package:rock_paper_scissors/rock-paper-scissors-lizard-spock.dart';
 import 'package:rock_paper_scissors/rock-paper-scissors.dart';
 
 class GameHome extends StatelessWidget {
@@ -30,14 +31,15 @@ class _HomeState extends State<Home> {
       children: [
         const Center(
             child: Text(
-          "Choose Your Destiny",
+          "Choose Your Daemon",
           style: TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.w900),
         )),
-        addVerticalSpacing(40),
+        addVerticalSpacing(120),
         GestureDetector(
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> RockPaperScissors()));
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => RockPaperScissors()));
           },
           child: Container(
             height: 50,
@@ -47,7 +49,12 @@ class _HomeState extends State<Home> {
         ),
         addVerticalSpacing(40),
         GestureDetector(
-          onTap: (){},
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => RockPaperScissorsLizardSpock()));
+          },
           child: Container(
             height: 80,
             child: rockPaperScissorsLizardSpock,
