@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "rps-ls",
+    "public": "public/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
