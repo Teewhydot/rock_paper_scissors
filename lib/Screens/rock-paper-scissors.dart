@@ -143,8 +143,8 @@ class RockPaperScissors extends StatelessWidget {
                 onTap: () {
                   showModalBottomSheet(
                       context: context,
-                      builder: (BuildContext context) =>
-                          showRulesScreen('assets/images/image-rules.png'));
+                      builder: (BuildContext context) => const showRulesScreen(
+                          'assets/images/image-rules.png'));
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 50),

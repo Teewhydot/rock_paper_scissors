@@ -161,7 +161,7 @@ class ResultsPage extends StatelessWidget {
                   style: TextStyle(fontSize: 20.sp),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff1e3555),
+                  backgroundColor: const Color(0xff1e3555),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -182,7 +182,7 @@ class ResultsPage extends StatelessWidget {
                   style: TextStyle(fontSize: 20.sp),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xff1e3555),
+                  backgroundColor: const Color(0xff1e3555),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),

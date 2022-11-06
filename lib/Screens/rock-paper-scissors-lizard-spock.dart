@@ -158,7 +158,7 @@ class RockPaperScissorsLizardSpock extends StatelessWidget {
                 onTap: () {
                   showModalBottomSheet(
                       context: context,
-                      builder: (BuildContext context) => showRulesScreen(
+                      builder: (BuildContext context) => const showRulesScreen(
                           'assets/images/image-rules-bonus.png'));
                 },
                 child: Padding(

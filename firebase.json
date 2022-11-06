@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "rps-ls",
-    "public": "public/web",
+    "public": "build/web",
     "ignore": [
       "firebase.json",
       "**/.*",
